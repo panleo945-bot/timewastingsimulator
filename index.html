@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<head>
+    <title>Time wasting simulator</title>
+    <link rel="stylesheet" src="style.css">
+</head>
+<body>
+    <h3>How to play: Time wasted is your score, so increase that, 
+        also you need to keep dopamine above 0% or you lose.
+        You lose when productivity or dopamine reaches 0%
+    </h3>
+    <h1 id="counter">Time wasted: 0 Hours</h1>
+    <h2 id="domamineCount">100% dopamine remaining</h2>
+    <h2 id="productivityPercent">100% productivity</h2>
+<button id="reels">Scroll reels for 1 hour</button>
+<button id="endDay">End day</button>
+<button id="beProductive">Code baloni out of boredom</button>
+<script>
+    const reelsButton = document.getElementById("reels")
+    reelsButton.addEventListener("click", reels)
+    const dayButton = document.getElementById("endDay")
+    dayButton.addEventListener("click", endDay)
+    const productivityButton = document.getElementById("beProductive")
+    productivityButton.addEventListener("click", beProductive)
+    const counter = document.getElementById("counter")
+    const dopaminer = document.getElementById("domamineCount")
+    const producter = document.getElementById("productivityPercent")
+    let day = 1
+    let waste = 0
+    let dopamine = 100
+    let productivity = 100
+    let lost = 0
+    function beProductive() {
+        productivity += Math.floor(Math.random() * 16)
+        //"capped" at 16 so maximum is 15
+        dopamine -= 10 
+        counters()
+    }
+    function reels() {
+    waste++
+    dopamine -= 10
+    counters()
+    }
+    function endDay() {
+        productivity -= 25
+        dopamine += 75
+        day++
+        counters()
+    }
+    function counters() {
+        if (dopamine > 0 & productivity > 0 & lost == 0) {
+counter.textContent = ("Time wasted: " + waste + " hours")
+dopaminer.textContent = (dopamine + "% dopamine remaining")
+producter.textContent = (productivity + "% productivity")}
+     else {
+        lost = 1
+        if (dopamine < 0) {
+dopaminer.textContent = "Lost due to lack of willingness to get off the bed"
+        }
+        if (productivity < 0) {
+producter.textContent = "Lost due to unemployment"
+        }
+        
+    }}
+</script>
+</body>
