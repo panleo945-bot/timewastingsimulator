@@ -1,3 +1,16 @@
+body {
+    background-color:rgba(107, 248, 19, 0.75);
+    text-align: center;
+}
 h1 {
-    color: whitesmoke
+    color: rgb(255, 0, 0)
+}
+h2 {
+    color:blue
+}
+h3 {
+    color:rgb(195, 0, 0)
+}
+div {
+    background-color: rgb(125, 114, 9);
 }
