@@ -1,16 +1,26 @@
 body {
     background-color:rgba(107, 248, 19, 0.75);
     text-align: center;
+    align-content: center;
 }
 h1 {
-    color: rgb(255, 0, 0)
+    color: orange
 }
 h2 {
-    color:blue
+    color:green;
+    display: inline;
+    font-size: 25px;
+    padding: 5px;
+    background-color: rgb(255, 255, 255);    
 }
 h3 {
     color:rgb(195, 0, 0)
 }
 div {
-    background-color: rgb(125, 114, 9);
+    background-color: rgb(30, 125, 9);
+    align-content: center;
+    border: 10px;
+    width: 640px;
+    height: 230px;
+    margin: 0 auto
 }
