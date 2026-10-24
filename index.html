@@ -4,10 +4,13 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h3>How to play: Time wasted is your score, so increase that, 
+    <h3 id="idiotspeaks">How to play: Time wasted is your score, so increase that by watching reels, <br>
         also you need to keep dopamine above 0% or you lose.
-        You lose when productivity or dopamine reaches 0%
-    </h3>
+        You lose when productivity or dopamine reaches 0%<br>
+        [Scrolls for 4 hours] oh shoot where was I?<br>
+        oh yeah, so when you try to increase productivity above 85% you gain 5 dopamine <br>
+        i think that was it right???
+    </h3> <button id="byebyeidiot">Dismiss</button>
     <div>
     <h1 id="counter">Time wasted: 0 Hours</h1>
     <h2 id="domamineCount">100% dopamine remaining</h2>
@@ -18,6 +21,7 @@
 <button id="beProductive">Code baloni out of boredom</button>
 </div>
 <script>
+    document.getElementById("byebyeidiot").addEventListener("click", () => {document.getElementById("byebyeidiot").remove(); document.getElementById("idiotspeaks").remove();})
     const reelsButton = document.getElementById("reels")
     reelsButton.addEventListener("click", reels)
     const dayButton = document.getElementById("endDay")
@@ -33,9 +37,15 @@
     let productivity = 100
     let lost = 0
     function beProductive() {
+        if (productivity < 85) {
         productivity += Math.floor(Math.random() * 16)
         //"capped" at 16 so maximum is 15
         dopamine -= 10 
+        } else if (dopamine < 100 && productivity < 100){
+            dopamine += 5
+            productivity = 100
+        }
+        
         counters()
     }
     function reels() {
@@ -45,15 +55,19 @@
     }
     function endDay() {
         productivity -= 25
-        dopamine += 75
+        dopamine = 100
         day++
         counters()
     }
     function counters() {
-        if (dopamine > 0 & productivity > 0 & lost == 0) {
+        if (dopamine > 0 && productivity > 0 && lost == 0) {
 counter.textContent = ("Time wasted: " + waste + " hours")
 dopaminer.textContent = (dopamine + "% dopamine remaining")
-producter.textContent = (productivity + "% productivity")}
+producter.textContent = (productivity + "% productivity")
+switch (Math.floor(dopamine/5) * 5) {
+    case 15:
+    dopaminer.style.color = "red"
+    }}
      else {
         lost = 1
         if (dopamine < 0) {
