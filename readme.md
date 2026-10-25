@@ -1,7 +1,7 @@
 # Time waster simulator
 It rhymes!
 ## Description
-Basically designed to simulate your normal day if you are a doomscroller
+Basically designed to simulate your normal day if you are a doomscroller 
 Also dont take this too seriously
 I coded this with vibes only (not vibe coding though thats different)
 ![Project in the works!](thumbnail.png)
