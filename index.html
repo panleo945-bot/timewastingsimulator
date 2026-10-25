@@ -65,9 +65,52 @@ counter.textContent = ("Time wasted: " + waste + " hours")
 dopaminer.textContent = (dopamine + "% dopamine remaining")
 producter.textContent = (productivity + "% productivity")
 switch (Math.floor(dopamine/5) * 5) {
+    case 5:
+    dopaminer.style.color = "black"
+    break;
+    case 10:
+    dopaminer.style.color = "fuchsia"
+    break;
     case 15:
+    dopaminer.style.color = "purple"
+    break;
+    case 20:
+    dopaminer.style.color = "blueviolet"
+    break;
+    case 25:
+    dopaminer.style.color = "darkred"
+    break;
+    case 30:
+    dopaminer.style.color = "bloodred"
+    break;
+    case 35:
     dopaminer.style.color = "red"
-    }}
+    break;
+    case 40:
+    dopaminer.style.color = "orangered"
+    break;
+    case 45:
+    dopaminer.style.color = "darkorange"
+    break;
+    case 50:
+    dopaminer.style.color = "darkgoldenrod"
+    break;
+    case 55:
+    dopaminer.style.color = "goldenrod"
+    break;
+    case 60:
+    dopaminer.style.color = "olive"
+    break;
+    default:
+    dopaminer.style.color = "green"
+    break;
+    }
+
+if (productivity < 25) {
+producter.style.color = "red"
+} else {
+    producter.style.color = "green"
+}}
      else {
         lost = 1
         if (dopamine < 0) {
