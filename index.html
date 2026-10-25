@@ -15,10 +15,11 @@
     <h1 id="counter">Time wasted: 0 Hours</h1>
     <h2 id="domamineCount">100% dopamine remaining</h2>
     <h2 id="productivityPercent">100% productivity</h2>
-<br><br>
+<br>
 <button id="reels">Scroll reels for 1 hour</button>
 <button id="endDay">End day</button>
 <button id="beProductive">Code baloni out of boredom</button>
+<button id="restart">Restart</button>
 </div>
 <script>
     document.getElementById("byebyeidiot").addEventListener("click", () => {document.getElementById("byebyeidiot").remove(); document.getElementById("idiotspeaks").remove();})
@@ -31,11 +32,16 @@
     const counter = document.getElementById("counter")
     const dopaminer = document.getElementById("domamineCount")
     const producter = document.getElementById("productivityPercent")
-    let day = 1
-    let waste = 0
-    let dopamine = 100
-    let productivity = 100
-    let lost = 0
+    const restart = document.getElementById("restart")
+    restart.addEventListener("click", initvars)
+    function initvars() {day = 1
+    waste = 0
+    dopamine = 100
+    productivity = 100
+    lost = 0
+counters()
+}
+    initvars()
     function beProductive() {
         if (productivity < 85) {
         productivity += Math.floor(Math.random() * 16)
@@ -121,5 +127,6 @@ producter.textContent = "Lost due to unemployment"
         }
         
     }}
+
 </script>
 </body>
